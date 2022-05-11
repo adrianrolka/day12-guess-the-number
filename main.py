@@ -1,13 +1,20 @@
 import random
+
 def game():
   print('Welcome to the Number Guessing Game!')
   print("I'm thinking of a number between 1 and 100.")
+  
+  # Generate a random number between 1 and 100
   number = random.randint(1,100)
+  
+  # Choose the difficulty and set appropriate number of lives
   difficulty_chosen = input("Choose a difficulty. Type 'easy' or 'hard': ")
   if difficulty_chosen == "hard":
     lives = 5
   else:
     lives = 10
+  
+  #Set a switch and a loop to keep guessing
   game_over = False
   while not game_over:
     if lives == 0:
@@ -27,6 +34,8 @@ def game():
         lives -= 1
       else: 
         game_over = True
+    
+  #Allow user to play again
   retry = input('Do you want to play again? Type yes or no: ')
   if retry == "yes":
     game()
@@ -34,4 +43,4 @@ def game():
 game()
 
 
-  
+  # Possible modifications include creating function to compare guess and number
